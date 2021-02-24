@@ -46,8 +46,6 @@ class DataField extends WatchUi.SimpleDataField {
 		solar_avg_count++;
 		solar_avg += val;
 		solar_avg_field.setData(solar_avg / solar_avg_count);
-
-		System.println(solar_avg / solar_avg_count);
 	}
 
 	function compute(info) {
