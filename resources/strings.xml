@@ -1,0 +1,5 @@
+<resources>
+    <string id="AppName">Solar</string>
+    <string id="solar_label">Solar</string>
+    <string id="solar_units">%</string>
+</resources>

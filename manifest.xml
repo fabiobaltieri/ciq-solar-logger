@@ -1,0 +1,11 @@
+<iq:manifest xmlns:iq="http://www.garmin.com/xml/connectiq" version="1">
+	<iq:application entry="Main" id="AE0B31AF73C24191A658B175CC305907" launcherIcon="@Drawables.LauncherIcon" minSdkVersion="3.2.0" name="@Strings.AppName" type="datafield">
+		<iq:products>
+			<iq:product id="enduro"/>
+		</iq:products>
+		<iq:languages/>
+		<iq:permissions>
+			<iq:uses-permission id="FitContributor"/>
+		</iq:permissions>
+	</iq:application>
+</iq:manifest>

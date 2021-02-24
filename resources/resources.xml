@@ -1,0 +1,14 @@
+<resources>
+	<fitContributions>
+		<fitField
+			id="0"
+			displayInChart="true"
+			sortOrder="0"
+			precision="0"
+			chartTitle="@Strings.solar_label"
+			dataLabel="@Strings.solar_label"
+			unitLabel="@Strings.solar_units"
+			fillColor="#ffe100"
+			/>
+	</fitContributions>
+</resources>
