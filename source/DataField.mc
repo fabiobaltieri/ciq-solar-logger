@@ -6,7 +6,7 @@ using Toybox.Math;
 using Toybox.FitContributor;
 
 class DataField extends WatchUi.SimpleDataField {
-	const BATT_FIELD_ID = 0;
+	const SOLAR_FIELD_ID = 0;
 	hidden var solar_field;
 	hidden var old_solar;
 
@@ -16,7 +16,7 @@ class DataField extends WatchUi.SimpleDataField {
 
 		solar_field = createField(
 				"solar",
-				BATT_FIELD_ID,
+				SOLAR_FIELD_ID,
 				FitContributor.DATA_TYPE_UINT8,
 				{:mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>"%"});
 	}
