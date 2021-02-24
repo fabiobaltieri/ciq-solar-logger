@@ -8,7 +8,7 @@
 			chartTitle="@Strings.solar_label"
 			dataLabel="@Strings.solar_label"
 			unitLabel="@Strings.solar_units"
-			fillColor="#ffe100"
+			fillColor="#ea9b4c"
 			/>
 	</fitContributions>
 </resources>
