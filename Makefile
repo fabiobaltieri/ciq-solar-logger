@@ -2,7 +2,7 @@ SDK_PATH = $(HOME)/ciq
 KEY = developer_key.der
 
 NAME = solar-log
-APP_ID = 
+APP_ID = d25c1310-a6a5-4517-8626-b3353665796e
 
 JUNGLE = monkey.jungle
 ifeq ($(DEVICE),)
