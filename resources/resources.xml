@@ -12,8 +12,8 @@
 			/>
 		<fitField
 			id="1"
-			displayInChart="false"
-			sortOrder="0"
+			displayInActivitySummary="true"
+			sortOrder="1"
 			precision="0"
 			dataLabel="@Strings.solar_avg_label"
 			unitLabel="@Strings.solar_avg_units"
