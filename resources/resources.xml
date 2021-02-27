@@ -14,7 +14,7 @@
 			id="1"
 			displayInActivitySummary="true"
 			sortOrder="1"
-			precision="0"
+			precision="1"
 			dataLabel="@Strings.solar_avg_label"
 			unitLabel="@Strings.solar_avg_units"
 			/>

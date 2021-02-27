@@ -26,7 +26,7 @@ class DataField extends WatchUi.SimpleDataField {
 		solar_avg_field = createField(
 				"solar_avg",
 				SOLAR_AVG_FIELD_ID,
-				FitContributor.DATA_TYPE_UINT8,
+				FitContributor.DATA_TYPE_FLOAT,
 				{:mesgType=>FitContributor.MESG_TYPE_SESSION, :units=>"%"});
 
 		solar_avg = 0;
@@ -45,7 +45,7 @@ class DataField extends WatchUi.SimpleDataField {
 
 		solar_avg_count++;
 		solar_avg += val;
-		solar_avg_field.setData(solar_avg / solar_avg_count);
+		solar_avg_field.setData(solar_avg.toFloat() / solar_avg_count);
 	}
 
 	function compute(info) {
