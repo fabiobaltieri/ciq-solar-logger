@@ -2,6 +2,7 @@
 	<iq:application entry="Main" id="AE0B31AF73C24191A658B175CC305907" launcherIcon="@Drawables.LauncherIcon" minSdkVersion="3.2.0" name="@Strings.AppName" type="datafield">
 		<iq:products>
 			<iq:product id="descentmk2s"/>
+			<iq:product id="edge1040"/>
 			<iq:product id="enduro"/>
 			<iq:product id="fenix6"/>
 			<iq:product id="fenix6pro"/>
