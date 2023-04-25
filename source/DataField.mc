@@ -8,8 +8,10 @@ using Toybox.FitContributor;
 class DataField extends WatchUi.SimpleDataField {
 	const SOLAR_FIELD_ID = 0;
 	const SOLAR_AVG_FIELD_ID = 1;
+	const BATT_FIELD_ID = 2;
 	hidden var solar_field;
 	hidden var solar_avg_field;
+	hidden var batt_field;
 
 	hidden var solar_avg;
 	hidden var solar_avg_count;
@@ -28,6 +30,10 @@ class DataField extends WatchUi.SimpleDataField {
 				SOLAR_AVG_FIELD_ID,
 				FitContributor.DATA_TYPE_FLOAT,
 				{:mesgType=>FitContributor.MESG_TYPE_SESSION, :units=>"%"});
+		batt_field = createField(
+				"battery", BATT_FIELD_ID,
+				FitContributor.DATA_TYPE_UINT8,
+				{:mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>"%"});
 
 		solar_avg = 0;
 		solar_avg_count = 0;
@@ -61,6 +67,9 @@ class DataField extends WatchUi.SimpleDataField {
 
 		solar_field.setData(solar);
 		update_avg(info, solar);
+
+		var batt = Math.round(stats.battery).toNumber();
+		batt_field.setData(batt);
 
 		return stats.solarIntensity;
 	}
