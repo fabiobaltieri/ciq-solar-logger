@@ -18,7 +18,7 @@ class DataField extends WatchUi.SimpleDataField {
 
 	function initialize() {
 		SimpleDataField.initialize();
-		label = "Solar";
+		label = "SOLAR";
 
 		solar_field = createField(
 				"solar",
