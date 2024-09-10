@@ -21,7 +21,7 @@
 		<fitField
 			id="2"
 			displayInChart="true"
-			sortOrder="0"
+			sortOrder="2"
 			precision="0"
 			chartTitle="@Strings.batt_label"
 			dataLabel="@Strings.batt_label"
