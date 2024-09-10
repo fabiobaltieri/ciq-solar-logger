@@ -22,7 +22,7 @@
 			id="2"
 			displayInChart="true"
 			sortOrder="2"
-			precision="0"
+			precision="2"
 			chartTitle="@Strings.batt_label"
 			dataLabel="@Strings.batt_label"
 			unitLabel="@Strings.batt_units"

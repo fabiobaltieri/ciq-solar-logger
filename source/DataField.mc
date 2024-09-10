@@ -32,7 +32,7 @@ class DataField extends WatchUi.SimpleDataField {
 				{:mesgType=>FitContributor.MESG_TYPE_SESSION, :units=>"%"});
 		batt_field = createField(
 				"battery", BATT_FIELD_ID,
-				FitContributor.DATA_TYPE_UINT8,
+				FitContributor.DATA_TYPE_FLOAT,
 				{:mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>"%"});
 
 		solar_avg = 0;
@@ -68,8 +68,7 @@ class DataField extends WatchUi.SimpleDataField {
 		solar_field.setData(solar);
 		update_avg(info, solar);
 
-		var batt = Math.round(stats.battery).toNumber();
-		batt_field.setData(batt);
+		batt_field.setData(stats.battery);
 
 		return stats.solarIntensity;
 	}
