@@ -15,6 +15,9 @@ class DataField extends WatchUi.SimpleDataField {
 
 	hidden var solar_avg;
 	hidden var solar_avg_count;
+	
+	hidden var last_batt = -1;
+	hidden var last_solar = -1;
 
 	function initialize() {
 		SimpleDataField.initialize();
@@ -31,12 +34,15 @@ class DataField extends WatchUi.SimpleDataField {
 				FitContributor.DATA_TYPE_FLOAT,
 				{:mesgType=>FitContributor.MESG_TYPE_SESSION, :units=>"%"});
 		batt_field = createField(
-				"battery", BATT_FIELD_ID,
-				FitContributor.DATA_TYPE_FLOAT,
+				"battery_pct_x100", BATT_FIELD_ID,
+				FitContributor.DATA_TYPE_UINT16,
 				{:mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>"%"});
 
 		solar_avg = 0;
 		solar_avg_count = 0;
+
+		last_batt = -1;
+		last_solar = -1;
 	}
 
 	function onTimerReset() {
@@ -60,16 +66,25 @@ class DataField extends WatchUi.SimpleDataField {
 		if (solar == null) {
 			return "---";
 		} else if (solar < 0) {
-			solar_field.setData(0);
-			update_avg(info, 0);
-			return "--";
+			solar = 0;
 		}
 
-		solar_field.setData(solar);
+		if (solar != last_solar) {
+			solar_field.setData(solar);
+			last_solar = solar;
+		}
 		update_avg(info, solar);
 
-		batt_field.setData(stats.battery);
+		var batt = Math.round(100 * stats.battery).toNumber();
+		if (batt != last_batt) {
+			batt_field.setData(batt);
+			last_batt = batt;
+		}
 
+
+		if (stats.solarIntensity < 0) {
+			return "--";
+		}
 		return stats.solarIntensity;
 	}
 }
